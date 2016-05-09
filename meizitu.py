@@ -3,7 +3,7 @@ import os
 from bs4 import BeautifulSoup
 
 # 创建需要下载图片的URL
-def collent_url():
+def collect_url():
     print('开始创建需要下载图片的URL')
     url_list = []
     # 起始网页
@@ -62,7 +62,7 @@ def run():
     # 加入headers模拟浏览器请求
     header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36',
               }
-    url_list = collent_url()
+    url_list = collect_url()
     for url in url_list:
         # 加入timeout超时时间
         response = requests.get(url, headers=header, timeout=30)
