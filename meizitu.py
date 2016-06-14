@@ -35,12 +35,12 @@ def create_directory(url, soup):
     title = soup.title.string[:-6]
     url_cut = len(url) - 5
     url_id = url[25:url_cut]
-    # 目录/Users/love/Desktop/暂时替换为/Users/Administrator/Desktop/spider/
-    if os.path.exists('/Users/love/Desktop/xx/' + url_id + ' ' + title):
+    path = os.path.dirname(os.path.realpath(__file__))  #Python文件的绝对路径
+    if os.path.exists(path + '/' + url_id + ' ' + title):
         None
     else:
-        os.mkdir('/Users/love/Desktop/xx/' + url_id + ' ' + title)
-    dir = '/Users/love/Desktop/xx/' + url_id + ' ' + title + '/'
+        os.mkdir(path + '/' + url_id + ' ' + title)
+    dir = path + '/' + url_id + ' ' + title + '/'
     return dir
 
 # 开始下载图片
