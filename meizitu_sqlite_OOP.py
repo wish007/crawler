@@ -36,7 +36,7 @@ class Meizitu():
         print(url + ' 已写入数据库')
 
 if __name__ == '__main__':
-    mzt = Meizitu(500, 520)
+    mzt = Meizitu(500, 502)
     conn = sqlite3.connect('meizitu.db')
     cur = conn.cursor()
     cur.execute('CREATE TABLE IF NOT EXISTS meizitu (page TEXT, title TEXT, url TEXT)')
@@ -48,3 +48,6 @@ if __name__ == '__main__':
         cur.close()
         conn.commit()
         conn.close()
+    cur.close()
+    conn.commit()
+    conn.close()
